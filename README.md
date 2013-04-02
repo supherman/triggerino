@@ -8,35 +8,37 @@ Add this line to your application's Gemfile:
 
 And then execute:
 
-    $ bundle
+    bundle
 
 Or install it yourself as:
 
-    $ gem install triggerino
+    gem install triggerino
 
 ## Usage
 
-2. Create your action classes inside a "triggerino" dir
+2. Create a "triggerino" dir
 
-  $ mkdir triggerino
+		mkdir triggerino
 
-  $ touch triggerino/my_action.rb
+3. Define your action classes
+	
+		touch triggerino/my_action.rb
 
-  class MyAction
-    include Triggerino::Action
+    	class MyAction
+      	  include Triggerino::Action
 
-    def perform
-      # puts your action logic here
-    end
+      	  def perform
+            # puts your action logic here
+      	  end
 
-    def to_s
-      'A descriptive name for your action'
-    end
-  end
+      	  def to_s
+            'A descriptive name for your action'
+      	  end
+    	end
 
 2. Run the listener
 
-  bundle exec triggerino
+  		bundle exec triggerino
 
 ## Contributing
 
