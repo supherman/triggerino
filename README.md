@@ -40,7 +40,7 @@ And then execute:
 
 ![LCD](http://arduino.cc/es/uploads/Tutorial/lcd_bb.png)
 
-Also add 2 push buttons, one will be the action selector and it needs to be connected to the pin 10 and a the other one will be the trigger and it needs to be connected to the pin 9.23
+Also add 2 push buttons, one will be the action selector and it needs to be connected to the pin 10 and a the other one will be the trigger and it needs to be connected to the pin 9.
 
 4. Run the listener
 
