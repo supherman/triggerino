@@ -2,17 +2,16 @@
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this lines to your application's Gemfile:
 
     gem 'triggerino'
+    gem 'dino',
+      git://github.com/supherman/dino.git',
+      branch: 'lcdv3'
 
 And then execute:
 
     bundle
-
-Or install it yourself as:
-
-    gem install triggerino
 
 ## Usage
 
