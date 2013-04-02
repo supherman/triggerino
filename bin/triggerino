@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+
+require 'bundler'
+Bundler.require
+
+Signal.trap("SIGINT") do
+  Thread.current.exit
+end
+
+files = File.expand_path('*.rb', Triggerino::Config.load_path)
+actions = []
+
+def constantize(path)
+  name = Pathname.new(path).basename('.rb').to_s
+  Module.const_get name.capitalize.split('_').map(&:capitalize).join
+end
+
+Dir[files].each do |f|
+  require f
+  actions << constantize(f).new
+end
+
+board     = Dino::Board.new(Dino::TxRx.new)
+button    = Dino::Components::Button.new(pin: 10, board: board, pullup: true)
+button2   = Dino::Components::Button.new(pin: 9, board: board, pullup: true)
+lcd       = Dino::Components::LCD.new(
+                  board: board,
+                  pins: { rs: 12, enable: 11, d4: 5, d5: 4, d6: 3, d7: 2 }
+)
+lcd.begin(16,2)
+display   = Triggerino::Display.new lcd
+list      = Triggerino::ActionList.new display, *actions
+selector  = Triggerino::Selector.new list, button
+trigger   = Triggerino::Trigger.new list, button2
+
+at_exit do
+  lcd.clear
+end
+
+sleep
