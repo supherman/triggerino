@@ -16,11 +16,11 @@ Or install it yourself as:
 
 ## Usage
 
-2. Create a "triggerino" dir
+1. Create a "triggerino" dir
 
 		mkdir triggerino
 
-3. Define your action classes
+2. Define your action classes
 	
 		touch triggerino/my_action.rb
 
@@ -35,8 +35,11 @@ Or install it yourself as:
             'A descriptive name for your action'
       	  end
     	end
+3. Wire your arduino like this
 
-2. Run the listener
+![LCD](http://arduino.cc/es/uploads/Tutorial/lcd_bb.png)
+
+4. Run the listener
 
   		bundle exec triggerino
 
