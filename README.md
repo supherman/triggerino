@@ -1,6 +1,6 @@
 # Triggerino
 
-Perform actions in your ruby project with easiness of pushing a big red button.
+Perform actions (run tests, deploy, ...or whatever you want) in your ruby project pushing a big red button.
 
 ## Installation
 
