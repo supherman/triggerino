@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 
-require 'bundler'
-Bundler.require
+require 'bundler/setup'
+require 'triggerino'
+require 'dino'
 
 Signal.trap("SIGINT") do
   Thread.current.exit
